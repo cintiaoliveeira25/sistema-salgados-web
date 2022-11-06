@@ -2,12 +2,11 @@ import styled, { css } from 'styled-components';
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  height: 6.5rem;
-  background: ${({ theme }) => theme.colors['base-background']};
+  height: 6.0rem;
+  background: ${({ theme }) => theme.colors['brand-orange']};
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
 
   > div {
     width: 100%;
@@ -44,12 +43,4 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
     background: ${theme.colors[`brand-${variant}-light`]};
     color: ${theme.colors[`brand-${variant}-dark`]};
   `}
-
-  ${({ variant, theme }) =>
-    variant === 'purple' &&
-    css`
-      svg {
-        color: ${theme.colors['brand-purple']};
-      }
-    `}
 `;

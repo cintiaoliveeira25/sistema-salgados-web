@@ -1,3 +1,10 @@
+import { Intro } from './components/Intro';
+import { HomeContainer } from './styles';
+
 export const Home = () => {
-  return <h1>home</h1>;
-}
+  return (
+    <HomeContainer>
+      <Intro />
+    </HomeContainer>
+  );
+};
