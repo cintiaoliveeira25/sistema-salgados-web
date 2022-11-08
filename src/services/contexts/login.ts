@@ -20,10 +20,11 @@ export const doLogin = async (email: string, password: string): Promise<boolean>
     password,
     grantType: 'password',
   };
+
   const result = await api.post('Users/authenticate', data);
   const { refreshToken, webToken, user } = result.data;
-
   saveAuthData({
+    user: user,
     refreshToken: refreshToken.token,
     accessToken: webToken.token,
     expires: webToken.expirationDate,
@@ -39,7 +40,7 @@ export const doLogin = async (email: string, password: string): Promise<boolean>
   }
 
   if (result.status === HttpStatusCode.OK) {
-    toast.success(`Bem vindo, ${user.name}`);
+    toast.success(`Bem vindo, ${user?.name}`);
   }
 
   return true;

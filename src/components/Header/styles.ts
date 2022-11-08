@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const HeaderContainer = styled.header`
   width: 100%;
   height: 6.0rem;
-  background: ${({ theme }) => theme.colors['brand-orange']};
+  background: ${({ theme }) => theme.colors['brand-brown']};
   display: flex;
   align-items: center;
   justify-content: center;

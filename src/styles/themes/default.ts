@@ -15,12 +15,12 @@ export const defaultTheme = {
     'brand-purple-strong': '#8047F8',
     'brand-purple-light': '#EBE5F9',
     'brand-yellow-dark': '#602806',
-    'brand-yellow-light': '#FFB700',
+    'brand-yellow-light': '#FFDFB6',
 
-    'brand-orange': '#FF5E23',
+    'brand-orange': '#FF4C00',
     'brand-yellow-strong': '#FFB700',
     'brand-pink-light': '#F15E5E',
-    'brand-brown': '#602806',
+    'brand-brown': '#5A2708',
     'brand-background': '#FFDFB6',
   },
   textSizes: {

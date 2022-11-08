@@ -45,3 +45,9 @@ export const IntroTitle = styled(TitleText)`
   margin-bottom: 0.5rem;
   color: ${({ theme }) => theme.colors['base-subtitle']};
 `;
+
+export const AccountContent = styled.div`
+  display: flex;
+  padding: 0.3rem;
+  justify-content: center;
+`;

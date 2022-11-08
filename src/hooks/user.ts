@@ -13,8 +13,6 @@ interface IAuthDataContext {
 
 export const useUser = (): IAuthDataContext => {
   const { user, handleSetUserContext, authenticated } = useContext(AuthUserContext);
-  // const teste = getAuthData();
-  // debugger
 
   const [authDataStringfy, setAuthDataStringfy] = useState<string | null>(JSON.stringify(getAuthData()));
 
@@ -22,11 +20,19 @@ export const useUser = (): IAuthDataContext => {
     setAuthDataStringfy(JSON.stringify(authData))
   }, [])
 
+  console.log(authDataStringfy);
+
   useEffect(() => {
     const authData = authDataStringfy && JSON.parse(authDataStringfy)
+    const isAuthenticate = authData && Object.keys(authData).length > 0;
 
-    saveAuthData({ ...authData })
-    handleSetUserContext(authData && authData.user)
+    console.log(authenticated);
+
+    if (isAuthenticate) {
+      saveAuthData({ ...authData })
+      handleSetUserContext(authData && authData.user)
+    }
+
   }, [authDataStringfy, handleSetUserContext])
 
   return {

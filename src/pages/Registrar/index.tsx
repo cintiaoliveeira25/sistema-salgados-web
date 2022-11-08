@@ -1,15 +1,16 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import signIn from '../../assets/sign_in.svg';
 import { Input } from '../../components/Input';
+import { RegularText } from '../../components/Typography';
 import { ErrorsType } from '../../models/errors';
 import { ICreateUser } from '../../models/user';
 import { createUser } from '../../services/contexts/login';
 import { Button } from './../../components/Button';
 import { schema } from './schema';
-import { AsideContent, Form, FormContent, IntroTitle, LoginContainer, MainContent } from './styles';
+import { AccountContent, AsideContent, Form, FormContent, IntroTitle, LoginContainer, MainContent } from './styles';
 
 export const Registrar = () => {
   const { register, handleSubmit, formState } = useForm<ICreateUser>({
@@ -38,7 +39,7 @@ export const Registrar = () => {
       </AsideContent>
       <MainContent>
         <FormContent>
-          <IntroTitle size='s'>Criar uma conta</IntroTitle>
+          <IntroTitle size='l'>Criar uma conta</IntroTitle>
           <Form onSubmit={handleSubmit(handleUserRegister)}>
             <Input
               type='text'
@@ -65,6 +66,11 @@ export const Registrar = () => {
               error={errors.confirmPassword?.message}
             />
             <Button>Entrar</Button>
+            <AccountContent>
+              <RegularText as='h5' size='s' color='subtitle'>
+                Ja possui uma conta? <NavLink to='/login'>Entre</NavLink>
+              </RegularText>
+            </AccountContent>
           </Form>
         </FormContent>
       </MainContent>

@@ -11,8 +11,9 @@ api.interceptors.request.use(async (conf: AxiosRequestConfig | any) => {
   const axiosConf = conf;
   let authData = getAuthData();
   const hasExpired = hasTokenExpired();
+  
 
-  if (hasExpired && authData.refreshToken) {
+  if (hasExpired && authData?.refreshToken) {
     try {
       const response = await axios.post(`${config.baseURL}users/refresh`, {
         grantType: 'refresh_token',

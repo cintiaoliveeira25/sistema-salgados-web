@@ -1,43 +1,36 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { HeaderButton, HeaderButtonsContainer, HeaderContainer } from './styles';
-import logo from '../../assets/logo.jpeg';
+// import logo from '../../assets/logo.jpeg';
+import logo from '../../assets/logo.jpg';
 import { ShoppingCart, SignIn, User } from 'phosphor-react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { getCurrentUserDetails, logout } from '../../services/contexts/login';
+import { logout } from '../../services/contexts/login';
 import { useUser } from '../../hooks/user';
 
 export const Header = () => {
-  const { authenticated, setAuthDataContext } = useUser();
-  const [user, setUser] = useState('');
+  const { authenticated, user, setAuthDataContext } = useUser();
 
-  const getCurrentUser = async () => {
-    const result = await getCurrentUserDetails();
-    setUser(result?.name);
-    console.log(result);
-  };
-
-  useEffect(() => {
-    getCurrentUser();
-  }, []);
-
-  console.log(authenticated);
+  useEffect(() => {}, [authenticated]);
 
   const handleLogout = (): void => {
     setAuthDataContext(null);
     logout();
-  }
+  };
 
   return (
     <HeaderContainer>
       <div className='container'>
-        <img className='logo-image' src={logo} />
+        <NavLink to='/'>
+          <img className='logo-image' src={logo} />
+        </NavLink>
 
         <HeaderButtonsContainer>
           {authenticated ? (
             <>
               <HeaderButton variant='yellow'>
                 <User size={20} weight='fill' />
-                {user}
+                {user?.name}
               </HeaderButton>
               <NavLink to='/login'>
                 <HeaderButton variant='yellow' onClick={handleLogout}>
