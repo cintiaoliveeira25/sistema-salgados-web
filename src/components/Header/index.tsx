@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { HeaderButton, HeaderButtonsContainer, HeaderContainer } from './styles';
-// import logo from '../../assets/logo.jpeg';
 import logo from '../../assets/logo.jpg';
 import { ShoppingCart, SignIn, User } from 'phosphor-react';
 import { useEffect } from 'react';
@@ -28,24 +27,24 @@ export const Header = () => {
         <HeaderButtonsContainer>
           {authenticated ? (
             <>
-              <HeaderButton variant='yellow'>
+              <HeaderButton variant='bege'>
                 <User size={20} weight='fill' />
                 {user?.name}
               </HeaderButton>
               <NavLink to='/login'>
-                <HeaderButton variant='yellow' onClick={handleLogout}>
+                <HeaderButton variant='bege' onClick={handleLogout}>
                   <SignIn size={20} weight='fill' alt='Logout' />
                 </HeaderButton>
               </NavLink>
             </>
           ) : (
             <NavLink to='/login'>
-              <HeaderButton variant='yellow'>
+              <HeaderButton variant='bege'>
                 <SignIn size={20} weight='fill' alt='Entrar' />
               </HeaderButton>
             </NavLink>
           )}
-          <HeaderButton variant='yellow'>
+          <HeaderButton variant='bege'>
             <ShoppingCart size={20} weight='fill' />
           </HeaderButton>
         </HeaderButtonsContainer>

@@ -8,7 +8,7 @@ interface TitleTextProps {
 
 interface RegularTextProps {
   size?: 'l' | 'm' | 's';
-  color?: 'text' | 'subtitle' | 'label';
+  color?: 'text' | 'subtitle' | 'label' | 'cart';
   weight?: string | number;
 }
 
