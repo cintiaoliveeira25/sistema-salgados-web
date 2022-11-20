@@ -44,9 +44,11 @@ export const Header = () => {
               </HeaderButton>
             </NavLink>
           )}
-          <HeaderButton variant='bege'>
-            <ShoppingCart size={20} weight='fill' />
-          </HeaderButton>
+          <NavLink to='/completeOrder'>
+            <HeaderButton variant='bege'>
+              <ShoppingCart size={20} weight='fill' />
+            </HeaderButton>
+          </NavLink>
         </HeaderButtonsContainer>
       </div>
     </HeaderContainer>

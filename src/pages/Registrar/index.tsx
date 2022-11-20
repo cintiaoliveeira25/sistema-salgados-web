@@ -65,7 +65,7 @@ export const Registrar = () => {
               placeholder='Confirmar Senha'
               error={errors.confirmPassword?.message}
             />
-            <Button>Entrar</Button>
+            <Button text='Salvar' />
             <AccountContent>
               <RegularText as='h5' size='s' color='subtitle'>
                 Ja possui uma conta? <NavLink to='/login'>Entre</NavLink>

@@ -25,5 +25,4 @@ export const RegularText = styled.p<RegularTextProps>`
   font-size: ${({ theme, size }) => theme.textSizes[`text-regular-${size ?? 'm'}`]};
   line-height: 130%;
   font-weight: ${({ weight }) => weight ?? 400};
-  width: 75%;
 `;

@@ -55,7 +55,7 @@ export const Login = () => {
               placeholder='Senha'
               error={errors.password?.message}
             />
-            <Button>Entrar</Button>
+            <Button text='Entrar' />
             <AccountContent>
               <RegularText as='h5' size='s' color='subtitle'>
                 Ainda não tem uma conta? <NavLink to='/registrar'>Cadastrar</NavLink>

@@ -1,3 +1,12 @@
+import { CompleteOrderForm } from './components/CompleteOrderForm';
+import { SelectedProducts } from './components/SelectedProducts';
+import { CompleteOrderContainer } from './styles';
+
 export const CompleteOrder = () => {
-  return <h1>complete order</h1>;
+  return (
+    <CompleteOrderContainer className='container'>
+      <CompleteOrderForm />
+      <SelectedProducts />
+    </CompleteOrderContainer>
+  );
 };
