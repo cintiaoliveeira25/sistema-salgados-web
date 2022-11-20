@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import { DefaultLayout } from './layouts/DefaultLayout';
-import { Login } from './pages/Login/index';
-import { Home } from './pages/Home/index';
-import { Registrar } from './pages/Registrar/index';
 import { CompleteOrder } from './pages/CompleteOrder';
+import { Home } from './pages/Home/index';
+import { Login } from './pages/Login/index';
+import { OrderConfirmed } from './pages/OrderConfirmed';
+import { Registrar } from './pages/Registrar/index';
 
 export const Router = () => {
   return (
@@ -13,6 +14,7 @@ export const Router = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/registrar' element={<Registrar />} />
         <Route path="/completeOrder" element={<CompleteOrder />} />
+        <Route path="/orderConfirmed" element={<OrderConfirmed />} />
       </Route>
     </Routes>
   );

@@ -11,7 +11,7 @@ export const CompleteOrderForm = () => {
 
   return (
     <CompleteOrderFormContainer>
-      <TitleText size='xs' color='subtitle'>
+      <TitleText size='xs' color='title'>
         Complete seu pedido
       </TitleText>
       <FormSectionContainer>

@@ -6,7 +6,7 @@ import { DetailsContainer, SelectedProductsContainer } from './styles';
 export const SelectedProducts = () => {
   return (
     <SelectedProductsContainer>
-      <TitleText size='xs' color='subtitle'>
+      <TitleText size='xs' color='title'>
         Itens selecionados
       </TitleText>
 

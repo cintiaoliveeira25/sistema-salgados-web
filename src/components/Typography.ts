@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 interface TitleTextProps {
   size?: 'xl' | 'l' | 'm' | 's' | 'xs';
-  color?: 'title' | 'subtitle' | 'text';
+  color?: 'cart' |'text' | 'subtitle' | 'title';
   weight?: string | number;
 }
 
@@ -12,7 +12,7 @@ interface RegularTextProps {
   weight?: string | number;
 }
 
-export const TitleText = styled.h1<TitleTextProps>`
+export const TitleText = styled.p<TitleTextProps>`
   color: ${({ theme, color }) => theme.colors[`base-${color ?? 'title'}`]};
   font-size: ${({ theme, size }) => theme.textSizes[`title-title-${size ?? 'm'}`]};
   font-family: ${({ theme }) => theme.fonts.title};
