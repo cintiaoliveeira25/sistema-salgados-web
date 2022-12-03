@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthUserProvider } from './context/AuthUserContext';
+import { CartContextProvider } from './context/CartContext';
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyle />
         <BrowserRouter>
-          <Router />
+          <CartContextProvider>
+            <Router />
+          </CartContextProvider>
         </BrowserRouter>
         <ToastContainer
           position='top-right'

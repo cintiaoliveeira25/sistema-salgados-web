@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { createContext, useCallback, useState } from 'react'
+import React, { createContext, ReactNode, useCallback, useState } from 'react'
 import { IUser } from '../models/user'
 
 export interface IUserContext {
@@ -9,7 +9,7 @@ export interface IUserContext {
 }
 
 interface IProps {
-  children: React.ReactNode
+  children: ReactNode;
 }
 
 export const AuthUserContext = createContext<IUserContext>({} as IUserContext)
