@@ -10,10 +10,10 @@ export const QuantityInput = ({
 }: QuantityInputProps) => {
   return (
     <QuantityInputContainer size={size}>
-      <IconWrapper onClick={onDecrease} disabled={quantity <= 1}>
+      <IconWrapper onClick={onDecrease} disabled={quantity <= 10}>
         <Minus size={14} weight='fill' />
       </IconWrapper>
-      <input type='number' readOnly value={1} />
+      <input type='number' readOnly value={quantity} />
       <IconWrapper onClick={onIncrease}>
         <Plus size={14} weight='fill' />
       </IconWrapper>

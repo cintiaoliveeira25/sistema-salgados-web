@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { HeaderButtonProps } from './types';
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -37,7 +38,9 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
   border: none;
   padding: 0 0.5rem;
   position: relative;
+  font-size: ${({ theme }) => theme.textSizes['text-regular-s']};
   cursor: inherit;
+
   span {
     position: absolute;
     width: 1.25rem;
@@ -52,19 +55,21 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
     font-size: 0.75rem;
     font-weight: 700;
   }
-  font-size: ${({ theme }) => theme.textSizes['text-regular-s']};
-  ${({ variant }) => css`
-    background: ${({ theme }) => theme.colors[`brand-${variant}-light`]};
-    color: ${({ theme }) => theme.colors[`brand-${variant}-dark`]};
+
+  ${({ variant, theme }) => css`
+    background: ${theme.colors[`brand-${variant}-light`]};
+    color: ${theme.colors[`brand-${variant}-dark`]};
+
     span {
-      background: ${({ theme }) => theme.colors[`brand-${variant}-dark`]};
+      background: ${theme.colors[`brand-${variant}-dark`]};
     }
   `}
-  ${({ variant }) =>
+
+  ${({ variant, theme }) =>
     variant === 'brown' &&
     css`
       svg {
-        color: ${({ theme }) => theme.colors[`brand-${variant}`]};
+        color: ${theme.colors[`brand-${variant}`]};
       }
     `}
 `;

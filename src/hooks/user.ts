@@ -20,13 +20,9 @@ export const useUser = (): IAuthDataContext => {
     setAuthDataStringfy(JSON.stringify(authData))
   }, [])
 
-  console.log(authDataStringfy);
-
   useEffect(() => {
     const authData = authDataStringfy && JSON.parse(authDataStringfy)
     const isAuthenticate = authData && Object.keys(authData).length > 0;
-
-    console.log(authenticated);
 
     if (isAuthenticate) {
       saveAuthData({ ...authData })

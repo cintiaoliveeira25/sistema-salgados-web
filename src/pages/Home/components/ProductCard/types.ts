@@ -3,8 +3,10 @@ export interface Product {
   tags: string[];
   name: string;
   description: string;
+  warning: string;
   photo: string;
   price: number;
+  uniPrice: number;
 }
 
 export interface ProductProps {

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { createContext, ReactNode, useCallback, useState } from 'react'
+import { createContext, ReactNode, useCallback, useState } from 'react'
 import { IUser } from '../models/user'
 
 export interface IUserContext {

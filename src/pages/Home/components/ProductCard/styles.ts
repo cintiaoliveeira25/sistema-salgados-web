@@ -11,7 +11,7 @@ export const ProductCardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
+
   img {
     width: 7.5rem;
     height: 7.5rem;
@@ -28,7 +28,7 @@ export const Tags = styled.div`
   margin-top: 1rem;
   margin-bottom: 1.25rem;
   flex-wrap: wrap;
-  
+
   span {
     background: ${({ theme }) => theme.colors['brand-yellow-light']};
     color: ${({ theme }) => theme.colors['brand-yellow-dark']};
@@ -52,8 +52,14 @@ export const Description = styled(RegularText).attrs({
   size: 's',
   color: 'label',
 })`
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   width: 100%;
+`;
+
+export const Warning = styled.div`
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  color: red;
 `;
 
 export const CardFooter = styled.div`

@@ -7,7 +7,7 @@ export const QuantityInputContainer = styled.div<QuantityInputContainerProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4px;
+  gap: 1px;
   border-radius: 6px;
 
   input {
@@ -16,7 +16,7 @@ export const QuantityInputContainer = styled.div<QuantityInputContainerProps>`
     background: none;
     border: none;
     color: ${({ theme }) => theme.colors['base-text']};
-    
+
     &:focus {
       outline: none;
     }

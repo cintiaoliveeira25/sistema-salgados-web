@@ -6,9 +6,11 @@ import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { logout } from '../../services/contexts/login';
 import { useUser } from '../../hooks/user';
+import { useCart } from './../../hooks/useCart';
 
 export const Header = () => {
   const { authenticated, user, setAuthDataContext } = useUser();
+  const { cartQuantity } = useCart();
 
   useEffect(() => {}, [authenticated]);
 
@@ -46,6 +48,7 @@ export const Header = () => {
           )}
           <NavLink to='/completeOrder'>
             <HeaderButton variant='bege'>
+              {cartQuantity >= 1 && <span>{cartQuantity}</span>}
               <ShoppingCart size={20} weight='fill' />
             </HeaderButton>
           </NavLink>
