@@ -4,9 +4,29 @@ import { RegularText, TitleText } from '../../components/Typography';
 import { OrderConfirmedContainer, OrderDetailsContainer, OrderDetailsWrapper } from './styles';
 import { useTheme } from 'styled-components';
 import confirmedOrderIllustration from '../../assets/delivery.svg';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { ICreateAddress } from '../../models/address';
+import { paymentMethods } from '../CompleteOrder/components/PaymentMethodOptions';
+
+interface LocationType {
+  state: ICreateAddress;
+}
 
 export const OrderConfirmed = () => {
   const { colors } = useTheme();
+
+  const { state } = useLocation() as unknown as LocationType;
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!state) {
+      navigate('/');
+    }
+  }, []);
+
+  if (!state) return <></>;
 
   return (
     <OrderConfirmedContainer className='container'>
@@ -26,9 +46,9 @@ export const OrderConfirmed = () => {
             iconBg={colors['brand-orange']}
             text={
               <RegularText>
-                Entrega em Rua João Manoel, 1032
+                Entrega em {state.street}, {state.number}
                 <br />
-                Vila Maria - Porto Alegre. RS
+                {state.district} - {state.city}. {state.uf}
               </RegularText>
             }
           />
@@ -52,7 +72,7 @@ export const OrderConfirmed = () => {
               <RegularText>
                 Pagamento na entrega
                 <br />
-                <strong>Cartão de crédito</strong>
+                <strong>{paymentMethods[state.paymentMethod].label}</strong>
               </RegularText>
             }
           />

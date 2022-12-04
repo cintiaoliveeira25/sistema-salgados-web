@@ -13,3 +13,8 @@ export const ProductsList = styled.div`
   row-gap: 2.5rem;
   margin-top: 3.5rem;
 `;
+
+export const ContainerItensProducts = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
